@@ -1,0 +1,23 @@
+{
+  "repeaters": {
+    "MyRemote": {
+      "UP_BUTTON": true,
+      "DOWN_BUTTON": true
+    }
+  },
+  "macros": {
+  },
+  "commandLabels": {
+    "LircNamespace": {
+      "ON_BUTTON": "Lights on",
+      "OFF_BUTTON": "Lights off",
+      "UP_BUTTON": "Light +",
+      "DOWN_BUTTON": "Light -",
+      "AC_ON": "AC - Power",
+      "AC_OFF": "AC - Off",
+    }
+  },
+  "remoteLabels": {
+    "LircNamespace": "LIRC namespace"
+  }
+}
