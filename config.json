@@ -1,14 +1,14 @@
 {
   "repeaters": {
-    "MyRemote": {
-      "MY_REMOTE": true,
+    "MY_REMOTE": {
+      "UP_BUTTON": true,
       "DOWN_BUTTON": true
     }
   },
   "macros": {
   },
-  "MY_REMOTE": {
-    "MyRemote": {
+  "commandLabels": {
+    "MY_REMOTE": {
       "ON_BUTTON": "Lights on",
       "OFF_BUTTON": "Lights off",
       "UP_BUTTON": "Light +",
