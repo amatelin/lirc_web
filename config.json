@@ -8,7 +8,7 @@
   "macros": {
   },
   "commandLabels": {
-    "LircNamespace": {
+    "MyRemote": {
       "ON_BUTTON": "Lights on",
       "OFF_BUTTON": "Lights off",
       "UP_BUTTON": "Light +",
@@ -18,6 +18,6 @@
     }
   },
   "remoteLabels": {
-    "LircNamespace": "LIRC namespace"
+    "MyRemote": "Salon"
   }
 }
