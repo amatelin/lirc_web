@@ -67,7 +67,7 @@ app.get('/', function(req, res) {
 // Music player 
 app.post('/play', function(req, res){
     res.send("Playing music");
-    lirc_node.irsend.send_once("MY_REMOTE", "ON_BUTTON", function() {});
+    //lirc_node.irsend.send_once("MY_REMOTE", "ON_BUTTON", function() {});
 
     proc = subprocess.spawn('mpg123',  ['-g' ,'100' ,'/home/pi/transfer/give_it_up.mp3']);
 
@@ -80,7 +80,10 @@ app.post('/play', function(req, res){
 app.post('/stop', function(req, res) {
     console.log("stopping music player");
     lirc_node.irsend.send_once("MY_REMOTE", "OFF_BUTTON", function() {});
-    proc.kill();
+    
+    if (proc) {
+        proc.kill();
+    }
 });
 
 // List all remotes in JSON format

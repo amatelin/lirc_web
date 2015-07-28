@@ -44,8 +44,8 @@
         <li class="remote" id="{{ remoteName }}">
           <ul class="commands">
             <li class="command">
-              <button id="disco_button_on" class="command-once btn btn-wide btn-large btn-warning" href="/play">Disco mode</button>
-              <button id="disco_button_off" class="command-once btn btn-wide btn-large btn-warning hidden" href="/stop">End the Disco</button>
+              <button id="disco_button_on" class="btn btn-wide btn-large btn-warning" href="/play">Disco mode</button>
+              <button id="disco_button_off" class="btn btn-wide btn-large btn-warning hidden" href="/stop">End the Disco</button>
             </li>
           {% for command in remote %}
              <li class="command">
@@ -67,6 +67,14 @@
       $("#disco_button_on").click(function() {
         $("#disco_button_on").toggleClass("hidden");
         $("#disco_button_off").toggleClass("hidden");
+        $.ajax({
+          type: 'POST',
+          url: '/macros/disco_mode',
+          success: function(data) {
+            console.log('success');
+            console.log(data);
+          }
+        });
       });
       $("#disco_button_off").click(function() {
         $("#disco_button_on").toggleClass("hidden");
