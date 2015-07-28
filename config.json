@@ -8,9 +8,9 @@
   "macros": {
       "disco_mode": [
       [ "MY_REMOTE", "ON_BUTTON" ],
-      [ "MY_REMOTE", "DOWN_BUTTON" ],
-      [ "MY_REMOTE", "DOWN_BUTTON" ],
-    ],
+      ["delay", 1000],
+      [ "MY_REMOTE", "DOWN_BUTTON" ]
+    ]
   },
   "commandLabels": {
     "MY_REMOTE": {
