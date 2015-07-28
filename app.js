@@ -6,6 +6,8 @@ var express = require('express'),
     lirc_node = require('lirc_node'),
     consolidate = require('consolidate'),
     path = require('path'),
+    subprocess = require('child_process'),
+    proc, 
     swig = require('swig'),
     labels = require('./lib/labels');
 
@@ -60,6 +62,25 @@ app.get('/', function(req, res) {
         labelForRemote: labelFor.remote,
         labelForCommand: labelFor.command
     }));
+});
+
+// Music player 
+app.post('/play', function(req, res){
+    res.send("Playing music");
+    lirc_node.irsend.send_once(MY_REMOTE, ON_BUTTON, function() {});
+
+    proc = subprocess.spawn('mpg123',  ['-g' ,'100' ,'/home/pi/transfer/give_it_up.mp3']);
+
+    proc.on('exit', function(code) {
+        console.log('subprocess has exited')
+    });
+
+})
+
+app.post('/stop', function(req, res) {
+    console.log("stopping music player");
+    lirc_node.irsend.send_once(MY_REMOTE, OFF_BUTTON, function() {});
+    proc.kill();
 });
 
 // List all remotes in JSON format

@@ -43,6 +43,10 @@
         {% set remoteName = loop.key %}
         <li class="remote" id="{{ remoteName }}">
           <ul class="commands">
+            <li class="command">
+              <button id="disco_button_on" class="command-once btn btn-wide btn-large btn-warning" href="/play">Disco mode</button>
+              <button id="disco_button_off" class="command-once btn btn-wide btn-large btn-warning hidden" href="/stop">End the Disco</button>
+            </li>
           {% for command in remote %}
              <li class="command">
                <button class="command-link {% if repeaters[remoteName][command] %}command-repeater{% else %}command-once{% endif %} btn btn-wide btn-large btn-primary" href="/remotes/{{ remoteName }}/{{ command|url_encode }}">{{ labelForCommand(remoteName, command) }}</button>
@@ -57,5 +61,21 @@
     <div class="next"></div>
 
     <script src="js/compiled/app.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+      $("#disco_button_on").click(function() {
+        $("#disco_button_on").toggleClass("hidden");
+        $("#disco_button_off").toggleClass("hidden");
+      });
+      $("#disco_button_off").click(function() {
+        $("#disco_button_on").toggleClass("hidden");
+        $("#disco_button_off").toggleClass("hidden");
+      });
+
+
+    </script
+
+
   </body>
 </html>
