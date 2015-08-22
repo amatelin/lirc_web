@@ -28,12 +28,12 @@
 
       <hr />
 
-      <ul class="macros-nav">
+     <!-- <ul class="macros-nav">
       {% for macro in macros %}
         {% set macroName = loop.key %}
         <li><button class="btn btn-wide btn-large btn-warning macro-link" href="/macros/{{ macroName }}">{{ macroName }}</button></li>
       {% endfor %}
-      </ul>
+      </ul>-->
 
 
       <div class="prev"></div>
@@ -75,10 +75,21 @@
             console.log(data);
           }
         });
+	$.ajax({
+	type:'POST',
+	url: '/play',
+	success: function(data) {}
+	});
       });
       $("#disco_button_off").click(function() {
         $("#disco_button_on").toggleClass("hidden");
         $("#disco_button_off").toggleClass("hidden");
+
+	$.ajax({
+	  type: 'POST', 
+	  url: '/stop',
+	  success: function(data) {}
+	});
       });
 
 
