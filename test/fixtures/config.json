@@ -1,33 +1,28 @@
 {
   "repeaters": {
-    "SonyTV": {
-      "VolumeUp": true,
-      "VolumeDown": true
+    "MY_REMOTE": {
+      "UP_BUTTON": true,
+      "DOWN_BUTTON": true
     }
   },
   "macros": {
-    "Play Xbox 360": [
-      [ "SonyTV", "Power" ],
-      [ "SonyTV", "Xbox360" ],
-      [ "Yamaha", "Power" ],
-      [ "Yamaha", "Xbox360" ],
-      [ "Xbox360", "Power" ]
-    ],
-    "Listen to Music": [
-      [ "Yamaha", "Power" ],
-      [ "Yamaha", "AirPlay" ]
+      "disco_mode": [
+      [ "MY_REMOTE", "ON_BUTTON" ],
+      ["delay", 1000],
+      [ "MY_REMOTE", "DOWN_BUTTON" ]
     ]
   },
   "commandLabels": {
-    "LircNamespace": {
-      "KEY_POWER": "Power",
-      "KEY_VOLUMEUP": "Vol+",
-      "KEY_VOLUMEDOWN": "Vol-",
-      "KEY_CHANNELUP": "Channel Up",
-      "KEY_CHANNELDOWN": "Channel Down"
+    "MY_REMOTE": {
+      "ON_BUTTON": "Lights on",
+      "OFF_BUTTON": "Lights off",
+      "UP_BUTTON": "Light +",
+      "DOWN_BUTTON": "Light -",
+      "AC_ON": "AC - Power",
+      "AC_OFF": "AC - Off"
     }
   },
   "remoteLabels": {
-    "LircNamespace": "LIRC namespace"
+    "MY_REMOTE": "Living room"
   }
 }
