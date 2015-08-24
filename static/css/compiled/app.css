@@ -90,3 +90,24 @@ a:active,
 .hidden {
   display: none !important;
 }
+
+
+.pagination li 
+{
+  display: block;
+}
+
+.pagination-minimal ul li a
+{
+  min-width: none;
+}
+
+.pagination-minimal ul li.previous a
+{
+  border-right: none;
+}
+
+.pagination-minimal ul li.next a 
+{
+  border-left: none;
+}

@@ -1,9 +1,9 @@
 {
   "MY_REMOTE": [
-    "LIGHTS_ON",
-    "LIGHTS_OFF",
-    "LIGHTS_UP",
-    "LIGTHS_DOWN",
+    "ON_BUTTON",
+    "OFF_BUTTON",
+    "UP_BUTTON",
+    "DOWN_BUTTON",
     "AC_ON",
     "AC_OFF",
     "AC_22",
