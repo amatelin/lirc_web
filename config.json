@@ -6,10 +6,36 @@
     }
   },
   "macros": {
-      "disco_mode": [
+      "special_mode": [
       [ "MY_REMOTE", "ON_BUTTON" ],
       ["delay", 1000],
       [ "MY_REMOTE", "DOWN_BUTTON" ]
+    ],
+    "lights_lvl1": [
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"]
+    ],
+    "lights_lvl2": [
+      [""]
+    ],
+    "lights_lvl3": [
+      [""]
+    ],
+    "lights_lvl4": [
+      [""]
+    ],
+    "lights_lvl5": [
+      [""]
+    ],
+    "lights_lvl6": [
+      [""]
     ]
   },
   "commandLabels": {

@@ -67,7 +67,6 @@ app.get('/', function(req, res) {
 // Music player 
 app.post('/play', function(req, res){
     res.send("Playing music");
-    //lirc_node.irsend.send_once("MY_REMOTE", "ON_BUTTON", function() {});
 
     proc = subprocess.spawn('mpg123',  ['/home/pi/transfer/nespresso_sountrack.mp3']);
 

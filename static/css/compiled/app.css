@@ -97,17 +97,116 @@ a:active,
   display: block;
 }
 
+.pagination-minimal ul li.previous
+{
+  margin-right: 0px;
+}
+
+.pagination-minimal ul li.next
+{
+  margin-left: 0px;
+}
+
 .pagination-minimal ul li a
 {
-  min-width: none;
+  min-width: 40px;
+}
+
+.pagination-minimal ul li a:hover, .pagination-minimal ul li a:focus
+{
+  background-color: #5DADE2;
+  border-color: #5DADE2;
+}
+
+
+.pagination-minimal > ul > li.active.previous {
+  margin: 0;
 }
 
 .pagination-minimal ul li.previous a
 {
   border-right: none;
+  width: 100%;
+  margin: 0 0 0 0;
+  border-radius: 6px 6px 0px 0px;
 }
 
 .pagination-minimal ul li.next a 
 {
   border-left: none;
+  width: 100%;
+  margin: 0 0 0 0;
+  border-radius: 0px 0px 6px 6px !important;
 }
+
+.pagination li.active.previous a, .pagination li.active.next a
+{
+  background-color: #5DADE2 !important;
+}
+
+
+.ac-control-panel {
+  border-right:  5px solid #ECF0F1;
+}
+
+.main-panel {
+  border-bottom:  5px solid #ECF0F1;
+}
+
+.control-panel-title {
+  text-align: center;
+}
+
+.temperature-list {
+  margin-left: 10%;
+}
+
+.ac-switch {
+  margin-top: 25%;
+}
+
+.light-control-button {
+  margin: 5% 0 5% 10%;
+  border-radius: 100px;
+  width: 40%;
+}
+
+.light-switch {
+  padding-left: 20%;
+  padding-top: 5%;
+}
+
+.light-slider-container {
+  margin-top: 15%;
+}
+
+.ui-slider-range {
+  background-color: #5dade2;
+}
+
+.ui-slider-handle, .ui-slider-handle:active  {
+  background-color: #3297da;
+}
+
+.ui-slider-handle:hover, .ui-slider-handle:focus {
+  background-color: #73b8e6;
+}
+
+
+.light-control-title {
+  padding-bottom: 10%;
+}
+
+.special-mode-panel { 
+  margin-top: 2%;
+  margin-left: 44%;
+  margin-bottom: 2%;
+}
+
+#special-mode-off {
+  margin-left: 1%;
+}
+
+
+
+

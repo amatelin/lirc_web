@@ -20,73 +20,63 @@
 </nav>
 
     <div id="container">
- 
+    <div class="col-md-12 main-panel">
+      <div class="col-md-6 ac-control-panel">
+        <h3 class="control-panel-title">Air conditionning</h3>
+        <div class="pagination pagination-minimal col-md-4">
 
+          <ul class="temperature-list">
+            <li class="previous"><a href="#" class="fui-triangle-up"></a></li>             
+            <li class=""><a href="#">16</a></li>
+            <li><a href="#">17</a></li>
+            <li><a href="#">18</a></li>
+            <li><a href="#">19</a></li>
+            <li class="active"><a href="#">20</a></li>
+            <li class=""><a href="#">21</a></li>
+            <li class=""><a href="#">22</a></li>
+            <li><a href="#">23</a></li>
+            <li><a href="#">24</a></li>
+            <li><a href="#">25</a></li>
+            <li class="next"><a href="#" class="fui-triangle-down"></a></li>
+          </ul>
 
-  
-
-      <div class="col-md-6">
-        <ul class="remotes">
-        {% for remote in remotes %}
-          {% set remoteName = loop.key %}
-          <li class="remote" id="{{ remoteName }}">
-            <ul class="commands">
-              <li class="command">
-              <button class="command-link command-once btn btn-wide btn-large btn-primary" href="/remotes/MY_REMOTE/ON_BUTTON">Lights on</button>
-              </li>
-              <li class="command">
-
-              </li>
-            {% for command in remote %}
-               <li class="command">
-                 <button class="command-link {% if repeaters[remoteName][command] %}command-repeater{% else %}command-once{% endif %} btn btn-wide btn-large btn-primary" href="/remotes/{{ remoteName }}/{{ command|url_encode }}">{{ labelForCommand(remoteName, command) }}</button>
-               </li>
-            {% endfor %}
-            </ul>
-          </li>
-        {% endfor %}
-        </ul>
+        </div>
+        <div class="col-md-8 ac-switch">
+         <input type="checkbox"  data-toggle="switch" class="switch" data-on-color="info"/ href="/remotes/MY_REMOTE/AC">
+        </div>
       </div>
-
-      <div class="col-md-6">
-          <div class="col-md-12">
-           <input type="checkbox"  data-toggle="switch" class="switch" id="light-switch" data-on-color="info"/ href="/remotes/MY_REMOTE/LIGHTS">
-           </div>
-           <div class="col-md-12">
-           <div class="pagination pagination-minimal">
-      
-            <ul>
-              <li class="previous"><a href="#fakelink" class="fui-triangle-up"></a></li>             
-              <li class=""><a href="#">16</a></li>
-              <li><a href="#">17</a></li>
-              <li><a href="#">18</a></li>
-              <li><a href="#">19</a></li>
-              <li class="active"><a href="">20</a></li>
-              <li class=""><a href="#">21</a></li>
-              <li class=""><a href="#">22</a></li>
-              <li><a href="#">23</a></li>
-              <li><a href="#">24</a></li>
-              <li><a href="#">25</a></li>
-              <li class="next"><a href="#" class="fui-triangle-down"></a></li>
-            </ul>
-          
+      <div class="col-md-6 light-control-panel">
+        <h3 class="control-panel-title light-control-title">Lights</h3>
+          <div class="col-md-4">
+            <div class="col-md-12">
+              <button class="btn btn-default btn-wide light-control-button">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+              </button>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-default btn-wide light-control-button">
+                <span class="glyphicon glyphicon-minus-sign"></span>
+              </button>
             </div>
           </div>
+          <div class="col-md-8 light-switch">
+           <input type="checkbox"  data-toggle="switch" class="switch" data-on-color="info"/ href="/remotes/MY_REMOTE/LIGHTS">
+          </div>
+          <div class="col-md-12 light-slider-container">
+            <div id="light-slider"></div>
+          </div>
+          
+      </div>
       </div>
 
-      <div class="col-md-6">
-         <input type="checkbox"  data-toggle="switch" class="switch"id="ac-switch" data-on-color="info"/ href="/remotes/MY_REMOTE/AC">
 
-      </div>
           
 
       </div>
 
-      <div class="col-md-12">
-        <button id="disco_button_on" class="command-once btn btn-wide btn-large btn-warning" href="/play">Disco mode</button>
-        <button id="disco_button_off" class="command-once btn btn-wide btn-large btn-warning hidden" href="/stop">End the Disco</button>
-
-
+      <div class="col-md-12 special-mode-panel">
+        <button id="special-mode-on" class="command-once btn btn-large btn-danger" href="/play"><span class="glyphicon glyphicon-glass"></span> Start special mode <span class="glyphicon glyphicon-music"></span></button>
+        <button id="special-mode-off" class="command-once btn btn-large btn-warning hidden" href="/stop">Stop special mode <span class="glyphicon glyphicon-off"></span></button>
       </div>
  
 
@@ -101,7 +91,50 @@
     <script src="js/vendor/application.js"></script>
      <script src="js/compiled/app.js" type="text/javascript" charset="utf-8"></script>
 
-     <script type="text/javascript">
+    <script type="text/javascript">
+    // Lights slider initialization
+    var $slider = $("#light-slider");
+    if ($slider.length > 0) {
+      $slider.slider({
+        min: 1,
+        max: 6,
+        value: 6,
+        orientation: "horizontal",
+        range: "min"
+      }).addSliderSegments($slider.slider("option").max);
+    }
+
+    // Lights slider event watching
+    $( "#light-slider" ).on( "slidestop", function( event, ui ) { 
+      light_value = ui.value;
+      call = "/macros/lights_lvl" + light_value
+       $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      }) 
+
+      } 
+    );
+
+    // Temperature control mechanism 
+    $(".pagination").on("tempChange", function(e) {
+      var temp = e.target.textContent;
+      var call = "/remotes/MY_REMOTE/AC_" + temp
+      $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      })  
+
+    })
+
     // On/off switch mechanism 
     $(".switch").on('switchChange.bootstrapSwitch', function(event, state) {
       address = this.getAttribute("href")
@@ -124,12 +157,12 @@
     });
     
     // Disco button mechanism
-      $("#disco_button_on").click(function() {
-        $("#disco_button_on").toggleClass("hidden");
-        $("#disco_button_off").toggleClass("hidden");
+      $("#special-mode-on").click(function() {
+        $("#special-mode-on").toggleClass("hidden");
+        $("#special-mode-off").toggleClass("hidden");
         $.ajax({
           type: 'POST',
-          url: '/macros/disco_mode',
+          url: '/macros/special_mode',
           success: function(data) {
             console.log('success');
             console.log(data);
@@ -137,9 +170,9 @@
         });
       });
 
-      $("#disco_button_off").click(function() {
-        $("#disco_button_on").toggleClass("hidden");
-        $("#disco_button_off").toggleClass("hidden");
+      $("#special-mode-off").click(function() {
+        $("#special-mode-on").toggleClass("hidden");
+        $("#special-mode-off").toggleClass("hidden");
       });
     </script
 
