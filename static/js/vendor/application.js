@@ -80,8 +80,6 @@ String.prototype.repeat = function (num) {
     // Temperature control mechanism
     $('.pagination').on('click', 'a', function () {
       elem_class = $(this).parent().attr("class");
-      a = $(this);
-      console.log(elem_class)
 
       // Handling the scroller
       if (elem_class && elem_class!="active") {

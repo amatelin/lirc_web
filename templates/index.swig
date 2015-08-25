@@ -49,12 +49,12 @@
         <h3 class="control-panel-title light-control-title">Lights</h3>
           <div class="col-md-4">
             <div class="col-md-12">
-              <button class="btn btn-default btn-wide light-control-button">
+              <button class="command-once btn btn-default btn-wide light-control-button" href="/remotes/MY_REMOTE/LIGHTS_UP">
                 <span class="glyphicon glyphicon-plus-sign"></span>
               </button>
             </div>
             <div class="col-md-12">
-              <button class="btn btn-default btn-wide light-control-button">
+              <button class="command-once btn btn-default btn-wide light-control-button" href="/remotes/MY_REMOTE/LIGHTS_DOWN">
                 <span class="glyphicon glyphicon-minus-sign"></span>
               </button>
             </div>
