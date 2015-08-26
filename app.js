@@ -78,7 +78,7 @@ app.post('/play', function(req, res){
 
 app.post('/stop', function(req, res) {
     console.log("stopping music player");
-    lirc_node.irsend.send_once("MY_REMOTE", "OFF_BUTTON", function() {});
+    lirc_node.irsend.send_once("MY_REMOTE", "LIGHTS_OFF", function() {});
     
     if (proc) {
         proc.kill();

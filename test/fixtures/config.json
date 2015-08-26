@@ -23,19 +23,31 @@
       ["MY_REMOTE", "DOWN_BUTTON"]
     ],
     "lights_lvl2": [
-      [""]
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"]
     ],
     "lights_lvl3": [
-      [""]
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"]
     ],
     "lights_lvl4": [
-      [""]
+      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["delay", 200],
+      ["MY_REMOTE", "DOWN_BUTTON"],
     ],
     "lights_lvl5": [
-      [""]
+      ["MY_REMOTE", "DOWN_BUTTON"]
     ],
     "lights_lvl6": [
-      [""]
+      ["MY_REMOTE", "LIGHTS_ON"]
     ]
   },
   "commandLabels": {
