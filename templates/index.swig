@@ -96,13 +96,44 @@
         value: 6,
         orientation: "horizontal",
         range: "min"
-      }).draggable();
+      }).addSliderSegments($slider.slider("option").max).draggable();
     }
 
     // Lights slider event watching
-    $( "#light-slider" ).on( "slidestop", function( event, ui ) { 
+    /*$( "#light-slider" ).on( "slidestop", function( event, ui ) { 
       light_value = ui.value;
       call = "/macros/lights_lvl" + light_value
+       $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      }) 
+
+      } 
+    );*/
+
+    $slider.on( "mousedown", function( event ) { 
+      abs_value = parseInt($(".ui-slider-range").attr("style").split(":")[1].split("%")[0])
+      value = ((abs_value/100)*5)+1
+      call = "/macros/lights_lvl" + value
+       $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      }) 
+      } 
+    );
+
+    $slider.on( "click", function( event, ui ) { 
+      //light_value = ui.value;
+      console.log("something")
+      call = "/macros/lights_lvl" 
        $.ajax({
         type: 'POST',
         url: call,
