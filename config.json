@@ -7,20 +7,20 @@
   },
   "macros": {
       "special_mode": [
-      [ "MY_REMOTE", "ON_BUTTON" ],
+      [ "MY_REMOTE", "LIGHTS_ON" ],
       ["delay", 1000],
-      [ "MY_REMOTE", "DOWN_BUTTON" ]
+      [ "MY_REMOTE", "LIGHTS_DOWN" ]
     ],
     "lights_lvl1": [
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"]
+      ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl2": [
       [""]
