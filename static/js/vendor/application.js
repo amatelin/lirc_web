@@ -88,15 +88,15 @@ String.prototype.repeat = function (num) {
           // here we append new values to the list so that it is always 10 numbers long
           var min_temp = parseInt($(".pagination li a")[1].textContent);
           if (min_temp>16) { 
-            $(".pagination li a")[10].remove();
+            $(".pagination li")[5].remove();
             $('<li><a href="#">'+(min_temp-1)+'</a></li>').insertAfter(".previous");
           }
         } 
         // list up (previous)
         else {
-          var max_temp = parseInt($(".pagination li a")[10].textContent);
+          var max_temp = parseInt($(".pagination li a")[5].textContent);
           if (max_temp<32) { 
-            $(".pagination li a")[1].remove();
+            $(".pagination li")[1].remove();
             $('<li><a href="#">'+(max_temp+1)+'</a></li>').insertBefore(".next");
           }
         }

@@ -48,11 +48,7 @@ h1.is-remote {
 .remote-link.active {
   background: #5dade2 !important;
 }
-.btn-wide {
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-}
+
 .remote {
   margin: 0;
   padding: 0;
@@ -80,9 +76,6 @@ a:active,
   transition: 0s !important;
   -webkit-backface-visibility: hidden !important;
 }
-#container {
-  margin: 0 40px;
-}
 
 .remote.active {
   display: block;
@@ -91,25 +84,8 @@ a:active,
   display: none !important;
 }
 
-
-.pagination li 
-{
-  display: block;
-}
-
-.pagination-minimal ul li.previous
-{
-  margin-right: 0px;
-}
-
-.pagination-minimal ul li.next
-{
-  margin-left: 0px;
-}
-
-.pagination-minimal ul li a
-{
-  min-width: 40px;
+.navbar {
+  margin-bottom: 0;
 }
 
 .pagination-minimal ul li a:hover, .pagination-minimal ul li a:focus
@@ -118,43 +94,18 @@ a:active,
   border-color: #5DADE2;
 }
 
-
-.pagination-minimal > ul > li.active.previous {
-  margin: 0;
-}
-
-.pagination-minimal ul li.previous a
-{
-  border-right: none;
-  width: 100%;
-  margin: 0 0 0 0;
-  border-radius: 6px 6px 0px 0px;
-}
-
-.pagination-minimal ul li.next a 
-{
-  border-left: none;
-  width: 100%;
-  margin: 0 0 0 0;
-  border-radius: 0px 0px 6px 6px !important;
-}
-
 .pagination li.active.previous a, .pagination li.active.next a
 {
   background-color: #5DADE2 !important;
 }
 
-
-.ac-control-panel {
-  border-right:  5px solid #ECF0F1;
-}
-
-.main-panel {
+.control-panel {
   border-bottom:  5px solid #ECF0F1;
 }
 
 .control-panel-title {
   text-align: center;
+  margin-top: 15px;
 }
 
 .temperature-list {
@@ -162,22 +113,28 @@ a:active,
 }
 
 .ac-switch {
-  margin-top: 25%;
+  padding-left: 35%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.fui-triangle-down {
+  min-height: 41px !important;
 }
 
 .light-control-button {
-  margin: 5% 0 5% 10%;
+  margin: 5% 5% 5% 10%;
   border-radius: 100px;
-  width: 40%;
+  width:100%;
 }
 
 .light-switch {
-  padding-left: 20%;
-  padding-top: 5%;
+  padding-top: 10%;
+  padding-left: 15%;
 }
 
 .light-slider-container {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .ui-slider-range {
@@ -192,15 +149,14 @@ a:active,
   background-color: #73b8e6;
 }
 
-
-.light-control-title {
-  padding-bottom: 10%;
+.special-mode-panel { 
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-bottom: 5%;
 }
 
-.special-mode-panel { 
-  margin-top: 2%;
-  margin-left: 44%;
-  margin-bottom: 2%;
+.special-mode-button {
+  border-radius: 100px;
 }
 
 #special-mode-off {

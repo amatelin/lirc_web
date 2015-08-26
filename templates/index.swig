@@ -16,67 +16,60 @@
   </head>
   <body ontouchstart="">
   <nav class="navbar navbar-default navbar-lg" role="navigation">
-     <h1>Raspi Remote</h1>
+     <h3 class="control-panel-title">Raspi Remote</h3>
 </nav>
 
-    <div id="container">
-    <div class="col-md-12 main-panel">
-      <div class="col-md-6 ac-control-panel">
-        <h3 class="control-panel-title">Air conditionning</h3>
-        <div class="pagination pagination-minimal col-md-4">
-
-          <ul class="temperature-list">
-            <li class="previous"><a href="#" class="fui-triangle-up"></a></li>             
-            <li class=""><a href="#">16</a></li>
-            <li><a href="#">17</a></li>
-            <li><a href="#">18</a></li>
-            <li><a href="#">19</a></li>
-            <li class="active"><a href="#">20</a></li>
-            <li class=""><a href="#">21</a></li>
-            <li class=""><a href="#">22</a></li>
-            <li><a href="#">23</a></li>
-            <li><a href="#">24</a></li>
-            <li><a href="#">25</a></li>
-            <li class="next"><a href="#" class="fui-triangle-down"></a></li>
-          </ul>
-
-        </div>
-        <div class="col-md-8 ac-switch">
-         <input type="checkbox"  data-toggle="switch" class="switch" data-on-color="info"/ href="/remotes/MY_REMOTE/AC">
-        </div>
-      </div>
-      <div class="col-md-6 light-control-panel">
-        <h3 class="control-panel-title light-control-title">Lights</h3>
-          <div class="col-md-4">
-            <div class="col-md-12">
-              <button class="command-once btn btn-default btn-wide light-control-button" href="/remotes/MY_REMOTE/LIGHTS_UP">
+    <div class="row">
+    <div class="col-xs-12 main-panel">
+      <div class="col-xs-12 control-panel">
+        <h4 class="control-panel-title light-control-title">Lights</h4>
+          <div class="col-xs-6">
+            
+              <button class="command-once btn btn-default light-control-button" href="/remotes/MY_REMOTE/LIGHTS_UP">
                 <span class="glyphicon glyphicon-plus-sign"></span>
               </button>
-            </div>
-            <div class="col-md-12">
-              <button class="command-once btn btn-default btn-wide light-control-button" href="/remotes/MY_REMOTE/LIGHTS_DOWN">
+          
+            
+              <button class="command-once btn btn-default light-control-button" href="/remotes/MY_REMOTE/LIGHTS_DOWN">
                 <span class="glyphicon glyphicon-minus-sign"></span>
               </button>
-            </div>
+           
           </div>
-          <div class="col-md-8 light-switch">
+          <div class="col-xs-6 light-switch">
            <input type="checkbox"  data-toggle="switch" class="switch" data-on-color="info"/ href="/remotes/MY_REMOTE/LIGHTS">
           </div>
-          <div class="col-md-12 light-slider-container">
+          <div class="col-xs-12 light-slider-container">
             <div id="light-slider"></div>
           </div>
           
       </div>
+      <div class="col-xs-12 control-panel">
+        <h4 class="control-panel-title">Air conditionning</h4>
+          <div class="col-xs-12 ac-switch">
+           <input type="checkbox"  data-toggle="switch" class="switch" data-on-color="info"/ href="/remotes/MY_REMOTE/AC">
+        </div>
+        <div class="pagination pagination-minimal col-xs-12">
+
+          <ul class="temperature-list">
+            <li class="previous"><a href="#" class="fui-triangle-up"></a></li>             
+            <li class=""><a href="#">20</a></li>
+            <li class=""><a href="#">21</a></li>
+            <li class=""><a href="#">22</a></li>
+            <li><a href="#">23</a></li>
+            <li><a href="#">24</a></li>
+            <li class="next"><a href="#" class="fui-triangle-down"></a></li>
+          </ul>
+
+        </div>
+      </div>
       </div>
 
 
           
 
-      </div>
-
-      <div class="col-md-12 special-mode-panel">
-        <button id="special-mode-on" class="command-once btn btn-large btn-danger" href="/play"><span class="glyphicon glyphicon-glass"></span> Start special mode <span class="glyphicon glyphicon-music"></span></button>
-        <button id="special-mode-off" class="command-once btn btn-large btn-warning hidden" href="/stop">Stop special mode <span class="glyphicon glyphicon-off"></span></button>
+      <div class="col-xs-12 special-mode-panel">
+        <button id="special-mode-on" class="command-once btn btn-large btn-danger special-mode-button" href="/play"><span class="glyphicon glyphicon-glass"></span> Start special mode <span class="glyphicon glyphicon-music"></span></button>
+        <button id="special-mode-off" class="command-once btn btn-large btn-warning hidden special-mode-button" href="/stop">Stop special mode <span class="glyphicon glyphicon-off"></span></button>
       </div>
  
 
@@ -85,6 +78,7 @@
 
 
     <script src="js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="js/vendor/video.js"></script>
     <script src="js/prettify.js"></script>
     <script src="js/flat-ui.min.js"></script>
@@ -174,7 +168,7 @@
         $("#special-mode-on").toggleClass("hidden");
         $("#special-mode-off").toggleClass("hidden");
       });
-    </script
+    </script>
 
 
   </body>
