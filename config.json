@@ -1,6 +1,6 @@
 {
   "repeaters": {
-    
+
   },
   "macros": {
       "special_mode": [
@@ -10,7 +10,7 @@
     ],
     "lights_lvl1": [
       [ "MY_REMOTE", "LIGHTS_ON" ],
-      ["delay", 200],
+      ["delay", 1000],
       ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
       ["MY_REMOTE", "LIGHTS_DOWN"],
@@ -23,7 +23,7 @@
     ],
     "lights_lvl2": [
       [ "MY_REMOTE", "LIGHTS_ON" ],
-      ["delay", 200],
+      ["delay", 1000],
       ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
       ["MY_REMOTE", "LIGHTS_DOWN"],
@@ -34,7 +34,7 @@
     ],
     "lights_lvl3": [
       [ "MY_REMOTE", "LIGHTS_ON" ],
-      ["delay", 200],
+      ["delay", 1000],
       ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
       ["MY_REMOTE", "LIGHTS_DOWN"],
@@ -43,14 +43,14 @@
     ],
     "lights_lvl4": [
       [ "MY_REMOTE", "LIGHTS_ON" ],
-      ["delay", 200],
+      ["delay", 1000],
       ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
       ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl5": [
       [ "MY_REMOTE", "LIGHTS_ON" ],
-      ["delay", 200],
+      ["delay", 1000],
       ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl6": [

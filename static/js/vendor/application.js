@@ -101,30 +101,101 @@ String.prototype.repeat = function (num) {
       $('[data-toggle="switch"]').bootstrapSwitch();
     }
 
-    // Typeahead
-    if ($('#typeahead-demo-01').length) {
-      var states = new Bloodhound({
-        datumTokenizer: function (d) { return Bloodhound.tokenizers.whitespace(d.word); },
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        limit: 4,
-        local: [
-          { word: 'Alabama' },
-          { word: 'Alaska' },
-          { word: 'Arizona' },
-          { word: 'Arkansas' },
-          { word: 'California' },
-          { word: 'Colorado' }
-        ]
-      });
-
-      states.initialize();
-
-      $('#typeahead-demo-01').typeahead(null, {
-        name: 'states',
-        displayKey: 'word',
-        source: states.ttAdapter()
-      });
+        // Lights slider initialization
+    var $slider = $("#light-slider");
+    if ($slider.length > 0) {
+      $slider.slider({
+        min: 1,
+        max: 6,
+        value: 6,
+        orientation: "horizontal",
+        range: "min"
+      }).addSliderSegments($slider.slider("option").max);
     }
+
+    // Lights slider event watching (we use two different events because one will fire on PC and the other on mobile)
+    $( "#light-slider" ).on( "slidestop", function( event, ui ) { 
+      light_value = ui.value;
+      call = "/macros/lights_lvl" + light_value
+       $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      }) 
+
+      } 
+    ).on( "click", function( event, ui ) { 
+      abs_value = parseInt($(".ui-slider-range").attr("style").split(":")[1].split("%")[0])
+      value = ((abs_value/100)*5)+1
+      call = "/macros/lights_lvl" + value
+       $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      }) 
+      } 
+    );
+
+    // Temperature control mechanism 
+    $(".pagination").on("tempChange", function(e) {
+      var temp = e.target.textContent;
+      var call = "/remotes/MY_REMOTE/AC_" + temp
+      $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      })  
+
+    })
+
+    // On/off switch mechanism 
+    $(".switch").on('switchChange.bootstrapSwitch', function(event, state) {
+      address = this.getAttribute("href")
+
+      // Set up call address
+      if (state) {
+      call =  address + "_ON"
+      } else {
+      call =   address + "_OFF"  }  
+
+      // make call
+      $.ajax({
+        type: 'POST',
+        url: call,
+        success: function(data) {
+          console.log('success');
+          console.log(data);
+        }
+      })  
+    });
+    
+    // Disco button mechanism
+      $("#special-mode-on").click(function() {
+        $("#special-mode-on").toggleClass("hidden");
+        $("#special-mode-off").toggleClass("hidden");
+        $.ajax({
+          type: 'POST',
+          url: '/macros/special_mode',
+          success: function(data) {
+            console.log('success');
+            console.log(data);
+          }
+        });
+      });
+
+      $("#special-mode-off").click(function() {
+        $("#special-mode-on").toggleClass("hidden");
+        $("#special-mode-off").toggleClass("hidden");
+      });
 
     // make code pretty
     window.prettyPrint && prettyPrint();

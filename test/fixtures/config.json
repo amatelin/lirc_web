@@ -1,50 +1,57 @@
 {
   "repeaters": {
-    "MY_REMOTE": {
-      "UP_BUTTON": true,
-      "DOWN_BUTTON": true
-    }
+
   },
   "macros": {
       "special_mode": [
-      [ "MY_REMOTE", "ON_BUTTON" ],
+      [ "MY_REMOTE", "LIGHTS_ON" ],
       ["delay", 1000],
-      [ "MY_REMOTE", "DOWN_BUTTON" ]
+      [ "MY_REMOTE", "LIGHTS_DOWN" ]
     ],
     "lights_lvl1": [
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      [ "MY_REMOTE", "LIGHTS_ON" ],
+      ["delay", 1000],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"]
+      ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl2": [
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      [ "MY_REMOTE", "LIGHTS_ON" ],
+      ["delay", 1000],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"]
+      ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl3": [
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      [ "MY_REMOTE", "LIGHTS_ON" ],
+      ["delay", 1000],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"]
+      ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl4": [
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      [ "MY_REMOTE", "LIGHTS_ON" ],
+      ["delay", 1000],
+      ["MY_REMOTE", "LIGHTS_DOWN"],
       ["delay", 200],
-      ["MY_REMOTE", "DOWN_BUTTON"],
+      ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl5": [
-      ["MY_REMOTE", "DOWN_BUTTON"]
+      [ "MY_REMOTE", "LIGHTS_ON" ],
+      ["delay", 1000],
+      ["MY_REMOTE", "LIGHTS_DOWN"]
     ],
     "lights_lvl6": [
       ["MY_REMOTE", "LIGHTS_ON"]
