@@ -17,6 +17,7 @@ String.prototype.repeat = function (num) {
         var output = '', i;
         console.log(amount);
         for (i = 1; i <= amount - 1; i++) {
+          console.log(i)
             output += '<div class="ui-slider-segment" style="top:' + 100 / amount * i + '%;"></div>';
         }
         $this.prepend(output);
@@ -46,29 +47,6 @@ String.prototype.repeat = function (num) {
 
     // Tooltips
     $('[data-toggle=tooltip]').tooltip('show');
-
-    // jQuery UI Sliders
-    var $slider = $('#slider');
-    if ($slider.length > 0) {
-      $slider.slider({
-        max: 15,
-        step: 6,
-        value: 3,
-        orientation: 'horizontal',
-        range: 'min'
-      }).addSliderSegments();
-    }
-
-    var $verticalSlider = $('#vertical-slider');
-    if ($verticalSlider.length) {
-      $verticalSlider.slider({
-        min: 1,
-        max: 5,
-        value: 3,
-        orientation: 'vertical',
-        range: 'min'
-      }).addSliderSegments($verticalSlider.slider('option').max, 'vertical');
-    }
 
     // Focus state for append/prepend inputs
     $('.input-group').on('focus', '.form-control', function () {

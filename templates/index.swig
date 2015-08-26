@@ -78,10 +78,11 @@
 
 
     <script src="js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/vendor/video.js"></script>
     <script src="js/prettify.js"></script>
     <script src="js/flat-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.js"></script>
     <script src="js/vendor/application.js"></script>
      <script src="js/compiled/app.js" type="text/javascript" charset="utf-8"></script>
 
@@ -95,7 +96,7 @@
         value: 6,
         orientation: "horizontal",
         range: "min"
-      }).addSliderSegments($slider.slider("option").max);
+      }).draggable();
     }
 
     // Lights slider event watching
